@@ -1,0 +1,51 @@
+{% extends "breadcrumb.html" %}
+{% load static %}
+
+{% block title %}Responder pregunta{% endblock %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item"><a href="{% url 'home' %}">Temas</a></li>
+	<li class="breadcrumb-item"><a href="{% url 'questions_per_subject' question.subject.pk %}">{{ question.subject.name }}</a></li>
+	<li class="breadcrumb-item"><a href="{% url 'answers_per_question' question.subject.pk question.pk %}">{{ question.title }}</a></li>
+	<li class="breadcrumb-item active">Responder pregunta</li>
+{% endblock %}
+
+
+{% block content %}
+	{{ block.super }}
+	<form method="post" class="mb-4" novalidate>
+		{% csrf_token %}
+		{% include 'includes/form.html' %}
+		<button type="submit" class="btn btn-success">Publicar respuesta</button>
+	</form>
+
+	{% for answer in question.get_last_ten_answers %}
+		<div class="card mb-2">
+			<div class="card-body p-3">
+				<div class="row mb-3">
+					<div class="col-6">
+						<strong class="text-muted">{{ answer.created_by.username }}</strong>
+					</div>
+						<div class="col-6 text-right">
+						<small class="text-muted">{{ answer.created_at }}</small>
+					</div>
+				</div>
+				{{ answer.get_message_as_markdown }}
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block scripts %}
+	{{ block.super }}
+	<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+	<script>
+		var simplemde = new SimpleMDE();
+	</script>
+{% endblock %}
+
+
+{% block stylesheet %}
+	{{ block.super }}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+{% endblock %}

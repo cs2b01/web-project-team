@@ -1,0 +1,20 @@
+body {
+  background-image: url(../img/signup_background.png);
+}
+
+.logo {
+	font-family: 'Crimson Text', serif;
+	background-color: #ffffff;
+	padding: 20px;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.logo a {
+  color: rgba(0,0,0,.9);
+}
+
+.logo a:hover,
+.logo a:active {
+  text-decoration: none;
+}

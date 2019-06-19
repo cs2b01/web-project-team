@@ -1,0 +1,33 @@
+{% extends "breadcrumb.html" %}
+
+
+{% block title %}Nueva pregunta{% endblock %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item"><a href="{% url 'home' %}">Temas</a></li>
+	<li class="breadcrumb-item"><a href="{% url 'questions_per_subject' subject.pk %}">{{ subject.name }}</a></li>
+	<li class="breadcrumb-item active">Nueva pregunta</li>
+{% endblock %}
+
+{% block content %}
+	{{ block.super }}
+	<form method="post" novalidate>
+		{% csrf_token %}
+		{% include 'includes/form.html' %}
+		<button type="submit" class="btn btn-success">Publicar</button>
+	</form>
+{% endblock %}
+
+{% block scripts %}
+	{{ block.super }}
+	<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+	<script>
+		var simplemde = new SimpleMDE();
+	</script>
+{% endblock %}
+
+
+{% block stylesheet %}
+	{{ block.super }}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+{% endblock %}

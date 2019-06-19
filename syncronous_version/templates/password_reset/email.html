@@ -1,0 +1,15 @@
+¡Hola! Te escribe el equipo de administradores de "Q&A UTEC".
+
+Alguien pidio recuperar la contraseña de la cuenta cuyo correo electrónico asociado es este: {{ email }}
+Para proceder con el cambio de la contraseña, entra al siguiente link:
+{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}
+Bajo ningún motivo, vayas a compartir este enlace con otra persona.
+
+En caso te hayas olvidado tu nombre de usuario, es este: {{ user.username }}
+
+Si hacer click en el link no te lleva a la página correcta, por favor copia y pega el URL en una nueva ventana de tu navegador web.
+Si estás recibiendo este correo por error, es probable que otra persona ingresó este correo electrónico por error en la ventana de recuperar contraseña.
+Si tu no pediste recuperar tu contraseña, simplemente omite este correo, o eliminalo.
+
+Muchas gracias,
+El equipo de administradores de Q&A UTEC.

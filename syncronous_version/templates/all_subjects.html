@@ -1,0 +1,55 @@
+{% extends "breadcrumb.html" %}
+{% load static %}
+
+{% block title %}
+	Temas - {{ block.super }}
+{% endblock %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item active">Temas</li>
+{% endblock %}
+
+{% block content %}
+	{{ block.super }}
+	<table class="table table-striped mb-4">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Nombre</th>
+				<th>Respuestas</th>
+				<th>Publicaciones</th>
+				<th>Última respuesta</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for subject in subjects %}
+			<tr>
+				<td>
+					<a href="{% url 'questions_per_subject' subject.pk %}">{{ subject.name }}</a>
+					<small class="text-muted d-block">{{ subject.description }}</small>
+				</td>
+				<td class="align-middle">
+					{{ subject.get_answers_count }}
+				</td>
+				<td class="align-middle">
+					{{ subject.questions.count }}
+				</td>
+				<td class="align-middle">
+					{% with answer=subject.get_last_answer %}
+					{% if answer %}
+						<small>
+							<a href="{% url 'answers_per_question' subject.pk answer.question.pk %}">
+								Por <strong>{{ answer.created_by.get_full_name }}</strong> el {{ answer.created_at }} en pregunta <em>"{{ answer.question.title }}"</em>
+							</a>
+						</small>
+					{% else %}
+						<small class="text-muted">
+						  <em>No hay respuestas.</em>
+						</small>
+					{% endif %}
+					{% endwith %}
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

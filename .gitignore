@@ -1,0 +1,29 @@
+# !1| Text editors !1|
+
+# !2| Vim !2|
+
+# !3| Swap !3|
+
+*.sw*
+
+# !3| Sessions !3|
+
+Session.vim
+
+# !1| Programming and scripting languages !1|
+
+# !2| Python !2|
+
+# !3| Virtual environments !3|
+
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# !3| Byte-compiled / optimized / DLL files !3|
+
+__pycache__/

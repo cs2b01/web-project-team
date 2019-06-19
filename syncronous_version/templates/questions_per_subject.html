@@ -1,0 +1,48 @@
+{% extends "breadcrumb.html" %}
+
+{% load humanize %}
+
+{% block title %}
+	Preguntas - {{ subject.name }}
+{% endblock %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item"><a href="{% url 'home' %}">Temas</a></li>
+	<li class="breadcrumb-item active">{{ subject.name }}</li>
+{% endblock %}
+
+{% block content %}
+	{{ block.super }}
+	<div class="mb-4">
+		<a href="{% url 'new_question' subject.pk %}" class="btn btn-primary">Nueva pregunta</a>
+	</div>
+	<table class="table table-striped mb-4">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Pregunta</th>
+				<th>Usuario</th>
+				<th>Respuestas</th>
+				<th>Vistas</th>
+				<th>Última actividad</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for question in questions %}
+			<tr>
+				<td><a href="{% url 'answers_per_question' subject.pk question.pk %}">{{ question.title }}</a></td>
+				<td>{{ question.starter.username }}</td>
+				<td>
+					{% if question.replies == -1 %}
+						0
+					{% else %}
+						{{ question.replies }}
+					{% endif %}
+				</td>
+				<td>{{ question.views }}</td>
+				<td>{{ question.last_updated|naturaltime }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% include 'includes/pagination.html' %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'breadcrumb.html' %}
+
+{% block title %}Editar respuesta{% endblock %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item"><a href="{% url 'home' %}">Página principal</a></li>
+	<li class="breadcrumb-item"><a href="{% url 'questions_per_subject' answer.question.subject.pk %}">{{ answer.question.subject.name }}</a></li>
+	<li class="breadcrumb-item"><a href="{% url 'answers_per_question' answer.question.subject.pk answer.question.pk %}">{{ answer.question.title }}</a></li>
+	<li class="breadcrumb-item active">Editar respuesta</li>
+{% endblock %}
+
+{% block content %}
+	{{ block.super }}
+	<form method="post" class="mb-4" novalidate>
+		{% csrf_token %}
+		{% include 'includes/form.html' %}
+		<button type="submit" class="btn btn-success">Guardar cambios</button>
+		<a href="{% url 'answers_per_question' answer.question.subject.pk answer.question.pk %}" class="btn btn-outline-secondary" role="button">Cancelar</a>
+	</form>
+{% endblock %}
+
+{% block scripts %}
+	{{ block.super }}
+	<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+	<script>
+		var simplemde = new SimpleMDE();
+	</script>
+{% endblock %}
+
+{% block stylesheet %}
+	{{ block.super }}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+{% endblock %}
