@@ -1,3 +1,43 @@
+# Colaboradores
+
+| Nombre          | Código    | Perfil en Github                      |
+| :-------------: | :-------: | :-----------------------------------: |
+| Gonzalo Alfaro  | 201810649 | [URI](https://github.com/Baconhead78) |
+| Frans Trujillo  | XXXXXXXXX | [URI](https://github.com/sh4psh1)     |
+| Rodrigo Morales | 201710168 | [URI](https://github.com/rma2000)     |
+
+# Stack actual
+
+* Django
+* PostgreSQL
+
+# Descripción general
+
+Este repositorio contiene el código fuente del proyecto del curso de "Desarrollo basado en plataformas." enseñado en UTEC.
+
+En términos simples, el objetivo de esta aplicación web es crear un espacio colaborativo para que los estudiantes de UTEC puedan publicar sus preguntas y respuestas respecto a diferentes cursos.
+
+# Enlaces importantes
+
+* [URI](http://ec2-3-18-214-26.us-east-2.compute.amazonaws.com:8080)
+* [Presentación final](https://docs.google.com/presentation/d/1cU7tlGvwfGrr8-NYtSzbNEOlBrzEZFQIhA01kwYw7qk/edit?usp=sharing)
+
+# Referencias
+
+* Back-end
+	* PostgreSQL
+		* [How To Use PostgreSQL with your Django Application on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04)
+		* [How to list user accounts?](https://www.postgresql.org/message-id/1121195544.8208.242.camel@state.g2switchworks.com)
+	* Django
+		* [Python Django Web Framework - Full Course for Beginners](https://www.youtube.com/watch?v=F5mRW0jo-U4)
+		* [Exporting and importing data in Django using pg_dump in PostgreSQL](https://django.cowhite.com/blog/exporting-and-importing-data-in-django-using-pg_dump-in-postgresql-mysqldump-in-mysql-dumpdata-and-loaddata-commands-in-django/)
+		* [A Complete Beginner's Guide to Django](https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/)
+		* [Documentation](https://docs.djangoproject.com)
+			* [Using the Django authentication system](https://docs.djangoproject.com/en/2.2/topics/auth/default/#user-objects)
+		* [Github repository](https://github.com/django/django)
+			* [`django/contrib/auth/base_user.py`](https://github.com/django/django/blob/master/django/contrib/auth/base_user.py)
+			* [`django/contrib/auth/models.py`](https://github.com/django/django/blob/master/django/contrib/auth/models.py)
+
 # Descripción del proyecto
 
 Este proyecto final del curso tiene como objetivo que te enfrentes a un desafío que te permita practicar los conocimientos adquiridos en el curso de Desarrollo Basado en Plataformas creando una aplicación para ambas versiones: Web y Móvil. Para el logro de este objetivo deberás implementar una aplicación Web y otra aplicación Móvil sobre un tema que consideres factible y que te interese siguiendo el diagrama de arquitectura de software descrito en
@@ -28,39 +68,3 @@ Con el fin de mejorar aún más el comportamiento para los requisitos de escala 
 ## Code-On-Demand
 
 La adición final al conjunto de restricciones proviene del estilo de código según demanda. Esto permite extender la funcionalidad del cliente descargando y ejecutando código en forma de applets o scripts. Esto simplifica a los clientes al reducir el número de características requeridas para ser implementadas previamente. Permitir que las funciones se descarguen después de la implementación mejora la extensibilidad del sistema.
-
-
-# Colaboradores
-
-| Nombre          | Código    | Perfil en Github                      |
-| :-------------: | :-------: | :-----------------------------------: |
-| Gonzalo Alfaro  | 201810649 | [URI](https://github.com/Baconhead78) |
-| Frans Trujillo  | XXXXXXXXX | [URI](https://github.com/sh4psh1)     |
-| Rodrigo Morales | 201710168 | [URI](https://github.com/rma2000)     |
-
-# Stack actual
-
-* Django
-* PostgreSQL
-
-# Descripción general
-
-Este repositorio contiene el código fuente del proyecto del curso de "Desarrollo basado en plataformas." enseñado en UTEC.
-
-En términos simples, el objetivo de esta aplicación web es crear un espacio colaborativo para que los estudiantes de UTEC puedan publicar sus preguntas y respuestas respecto a diferentes cursos.
-
-# Referencias
-
-* Back-end
-	* PostgreSQL
-		* [How To Use PostgreSQL with your Django Application on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04)
-		* [How to list user accounts?](https://www.postgresql.org/message-id/1121195544.8208.242.camel@state.g2switchworks.com)
-	* Django
-		* [Python Django Web Framework - Full Course for Beginners](https://www.youtube.com/watch?v=F5mRW0jo-U4)
-		* [Exporting and importing data in Django using pg_dump in PostgreSQL](https://django.cowhite.com/blog/exporting-and-importing-data-in-django-using-pg_dump-in-postgresql-mysqldump-in-mysql-dumpdata-and-loaddata-commands-in-django/)
-		* [A Complete Beginner's Guide to Django](https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/)
-		* [Documentation](https://docs.djangoproject.com)
-			* [Using the Django authentication system](https://docs.djangoproject.com/en/2.2/topics/auth/default/#user-objects)
-		* [Github repository](https://github.com/django/django)
-			* [`django/contrib/auth/base_user.py`](https://github.com/django/django/blob/master/django/contrib/auth/base_user.py)
-			* [`django/contrib/auth/models.py`](https://github.com/django/django/blob/master/django/contrib/auth/models.py)
